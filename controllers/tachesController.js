@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-// Chemin vers le fichier de données
+// chemin vers le fichier JSON
 const dataPath = path.join(__dirname, '../data/taches.json');
 
-// Lire les tâches depuis le fichier JSON
+// lire le fichier JSON
 const lireTaches = () => {
   try {
     const data = fs.readFileSync(dataPath, 'utf8');
@@ -14,12 +14,12 @@ const lireTaches = () => {
   }
 };
 
-// Écrire dans le fichier JSON
+// écrire dans le fichier JSON
 const ecrireTaches = (taches) => {
   fs.writeFileSync(dataPath, JSON.stringify(taches, null, 2), 'utf8');
 };
 
-// Récupérer toutes les tâches
+// récupérer toutes les tâches
 exports.getTaches = (req, res) => {
   const taches = lireTaches();
   res.status(200).json(taches);

@@ -10,12 +10,12 @@ router.post('/', tachesController.ajouterTache);
 router.put('/:id', tachesController.modifierTache);
 router.delete('/:id', tachesController.supprimerTache);
 
-// Nouvelle route pour créer une tâche via une requête GET
+// router pour créer
 router.get('/creer', (req, res) => {
   // Récupérer le titre depuis les paramètres d'URL
   const titre = req.query.titre;
 
-  // Vérification si le paramètre `titre` est fourni
+
   if (!titre) {
     return res.status(400).json({ message: "Le paramètre 'titre' est requis pour créer une tâche." });
   }
@@ -32,7 +32,7 @@ router.get('/creer', (req, res) => {
 
   // Création de la nouvelle tâche
   const nouvelleTache = {
-    id: taches.length + 1, // Génération d'un ID unique basé sur la taille actuelle
+    id: taches.length + 1,
     titre: titre
   };
 

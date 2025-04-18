@@ -10,7 +10,7 @@ app.use(express.json());
 // Routes
 app.use('/taches', tachesRoutes);
 
-// Démarrage du serveur
+// pour démarrer le serveur
 app.listen(port, () => {
   console.log(`Serveur en écoute sur http://localhost:${port}`);
 });
